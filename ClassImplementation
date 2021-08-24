@@ -1,0 +1,41 @@
+
+class Dog:
+
+    def __init__(self, age, name="Unknown"):
+        self.myname = name 
+        self.myage = age
+        print(self.myname+" was born")
+
+    def speak(self,x=1):
+        text = ""
+        for i in range(x):
+            text = text + "woof "
+        return self.myname+" says: "+text
+    
+    def print_age(self):
+        print(self.myage)
+
+class Kennel: 
+    def __init__(self):
+        self.dogs = []
+    def add_dogs(self, dog):
+        self.dogs.append(dog)
+    def get_dogs(self, index):
+        return self.dogs[index]
+
+fido = Dog(2, "Fido")
+rover = Dog(4, "Rover")
+
+print( fido.speak(5) )
+print( rover.speak(8) )
+
+fido.print_age()
+rover.print_age()
+
+k = Kennel()
+print( k.dogs )
+k.add_dogs(fido)
+k.add_dogs(rover)
+print( k.dogs )
+dog = k.get_dogs(0)
+print (dog.speak() )

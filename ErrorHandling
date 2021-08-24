@@ -1,0 +1,19 @@
+x = input("Give a number: ")
+
+try: 
+    print("a")
+    x = int(x)
+    print("b")
+    x = 1/x
+    print("c")
+
+except ZeroDivisionError as name :
+    print(name)
+    print(name.__class__)
+    print("you tried to divide by 0")
+
+except Exception as e :
+    print(e.__class__)
+    print("you got an error") 
+
+print(x) 
